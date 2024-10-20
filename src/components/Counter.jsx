@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { GrPowerReset } from "react-icons/gr";
+import Button from './sub-components/Button';
+
 
 function Counter() {
 
@@ -28,9 +31,9 @@ function Counter() {
   return (
     <div>
       <p>{count}</p>
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={handleDecrement}>-</button>
-      <button onClick={handleReset} disabled={resetDisable}>reset</button>
+      <Button onClick={handleIncrement}>+</Button>
+      <Button onClick={handleDecrement}>-</Button>
+      {resetDisable ? null : <Button onClick={handleReset}><GrPowerReset/></Button>}
     </div>
   )
 }
